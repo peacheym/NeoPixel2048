@@ -16,6 +16,11 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(4, 4, PIN,
 int xpos;
 int ypos;
 
+
+//The main game board where all values will be stored.
+int board[4][4];
+
+
 void setup() {
 
   Serial.begin(9600);
@@ -36,40 +41,41 @@ void setup() {
   
 }
 
-//This function will continously loop.
+//This function will continously loop
 void loop() {
+  //If the game is not over yet
+  if(gameStatus != 2){
+    if(digitalRead(RIGHT_BTN) == LOW){
+      right();
+      delay(300);
+    }
 
-  if(digitalRead(RIGHT_BTN) == LOW){
-    right();
-    delay(300);
-  }
-
-  if(digitalRead(DOWN_BTN) == LOW){
-    down();
-    delay(300);
-  }
+    if(digitalRead(DOWN_BTN) == LOW){
+      down();	
+      delay(300);
+    }
   
-  if(digitalRead(UP_BTN) == LOW){
-    up();
-    delay(300);
-  }
+    if(digitalRead(UP_BTN) == LOW){
+      up();
+      delay(300);
+    }
   
-  if(digitalRead(LEFT_BTN) == LOW){
-    left();
-    delay(300);
-  }
+    if(digitalRead(LEFT_BTN) == LOW){
+      left();
+      delay(300);
+    }
 
-  if(digitalRead(2) == LOW){
-    randomColor();
-    delay(500);
-  }
+    if(digitalRead(2) == LOW){
+      randomColor();
+      delay(500);
+    }
   
-  matrix.clear(); // Set all pixel colors to 'off'
+    matrix.clear(); // Set all pixel colors to 'off'
   
-  matrix.drawPixel(xpos,ypos,CYAN);
+    matrix.drawPixel(xpos,ypos,CYAN);
 
-  matrix.show();
-
+    matrix.show();
+  }
 }
 
 //These functions will be called when a button is pressed
