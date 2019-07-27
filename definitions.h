@@ -17,14 +17,15 @@
   //Define values for each button pin.
   #define RIGHT_BTN 12
   
-  #define DOWN_BTN 11
+  #define DOWN_BTN 10
   
-  #define UP_BTN 10
+  #define UP_BTN 11
   
   #define LEFT_BTN 9
   
   #define NUMPIXELS 16 // 4x4 matrix = 16 NeoPixels
   
 #endif
+
 
 
