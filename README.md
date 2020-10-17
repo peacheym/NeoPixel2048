@@ -17,3 +17,6 @@ Libraries used in this project include:
 * [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel)
 * [Adafruit_NeoMatrix](https://github.com/adafruit/Adafruit_NeoMatrix)
 * [Adafruit_GFX](https://github.com/adafruit/Adafruit-GFX-Library)
+
+### Todo
+I would like to port this project to a new QTPY board from Adafruit.
